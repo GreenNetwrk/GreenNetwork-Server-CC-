@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.7.8 GN3 ALPHA"
+local SoftwareVersion = "16.8.0 GN3 ALPHA"
 
 --//Prep//--
 
@@ -250,16 +250,15 @@ local function serverInfoUI( )
     term.setTextColor( colors.lime )
     write( requestCount )
     term.setTextColor( colors.white )
+    
+    term.setCursorPos( 1, 11 )
+    print( "[Exit]" )
 
 	term.setCursorPos( 1, size[ 2 ] )
     term.setTextColor( colors.lime )
     write( "Green" )
     term.setTextColor( colors.white )
     write( "Network" )
-    
-    sleep( 5 )
-    
-    homeUI( )
 end
 
 local function UISSS( )
@@ -353,6 +352,10 @@ local function UIHandle( )
             UISSS( )
         elseif data[ 4 ] == 5 and data[ 3 ] >= 1 and data[ 3 ] <= 6 then
             homeUI( )
+        end
+    elseif UIPage == "serverInfo" then
+        if data[ 4 ] == 11 and data[ 3 ] >= 1 and data[ 3 ] <= 6 then
+            homeUI()
         end
     end 
 end
