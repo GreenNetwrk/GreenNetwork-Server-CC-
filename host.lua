@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.7.6 GN2 ALPHA"
+local SoftwareVersion = "16.7.7 GN3 ALPHA"
 
 --//Prep//--
 
