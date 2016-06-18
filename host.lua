@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.8.0 GN3 ALPHA"
+local SoftwareVersion = "16.8.1 GN3 ALPHA"
 
 --//Prep//--
 
@@ -246,7 +246,7 @@ local function serverInfoUI( )
     term.setBackgroundColor( colors.gray )
     
     term.setCursorPos( 1, 9 )
-    write( "Requests:" )
+    write( "Requests: " )
     term.setTextColor( colors.lime )
     write( requestCount )
     term.setTextColor( colors.white )
@@ -357,7 +357,7 @@ local function UIHandle( )
         if data[ 4 ] == 11 and data[ 3 ] >= 1 and data[ 3 ] <= 6 then
             homeUI()
         end
-    end 
+    end
 end
 
 --//End logic code//--
