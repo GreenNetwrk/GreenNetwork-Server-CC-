@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.7.4 GN2 ALPHA"
+local SoftwareVersion = "16.7.5 GN2 ALPHA"
 
 --//Prep//--
 
@@ -328,7 +328,7 @@ local function UIHandle( )
    			term.setTextColor( colors.lime )
     		write( "Green" )
     		term.setTextColor( colors.white )
-    		write( "Net" )
+    		write( "Network" )
         elseif data[ 4 ] == 9 and data[ 3 ] >= 1 and data[ 3 ] <= 28 then
             UISSS()
         elseif data[ 4 ] == 3 and data[ 3 ] >= 14 and data[ 3 ] <= 16 then
