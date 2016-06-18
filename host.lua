@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.7.2 GN2 ALPHA"
+local SoftwareVersion = "16.7.4 GN2 ALPHA"
 
 --//Prep//--
 
@@ -25,7 +25,7 @@ local size = { term.getSize( ) }
 
 if not term.isColor( ) then
     print( "Download different version of GreenNetwork server for this type of computer" )
-    error( "This version of GreenNet server is for advanced computers ONLY" )
+    error( "This version of GreenNetwork server is for advanced computers ONLY" )
 end
 
 if not http then
@@ -178,7 +178,7 @@ local function homeUI( )
     
     term.setTextColor( colors.lightGray )
     term.setCursorPos( 1, 15 )
-    print( "GreenNetwork Page host" )
+    print( "GreenNetwork File Host Software" )
     term.setTextColor( colors.white )
     
     term.setCursorPos( 1, size[ 2 ] )
