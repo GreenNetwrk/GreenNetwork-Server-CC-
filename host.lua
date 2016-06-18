@@ -17,14 +17,14 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.7.1 GN2 ALPHA"
+local SoftwareVersion = "16.7.2 GN2 ALPHA"
 
 --//Prep//--
 
 local size = { term.getSize( ) } 
 
 if not term.isColor( ) then
-    print( "Download different version of GreenNet server for this type of computer" )
+    print( "Download different version of GreenNetwork server for this type of computer" )
     error( "This version of GreenNet server is for advanced computers ONLY" )
 end
 
@@ -178,14 +178,14 @@ local function homeUI( )
     
     term.setTextColor( colors.lightGray )
     term.setCursorPos( 1, 15 )
-    print( "GreenNet is a ComputerCraft program that relays certin blocks of code to different cliets." )
+    print( "GreenNetwork Page host" )
     term.setTextColor( colors.white )
     
     term.setCursorPos( 1, size[ 2 ] )
     term.setTextColor( colors.lime )
     write( "Green" )
     term.setTextColor( colors.white )
-    write( "Net" )
+    write( "Network" )
 end
 
 local function domainNameUI( )
@@ -207,7 +207,7 @@ local function domainNameUI( )
     term.setTextColor( colors.lime )
     write( "Green" )
     term.setTextColor( colors.white )
-    write( "Net" )
+    write( "Network" )
 
     sleep( 3 )
     homeUI( )
@@ -255,7 +255,7 @@ local function serverInfoUI( )
     term.setTextColor( colors.lime )
     write( "Green" )
     term.setTextColor( colors.white )
-    write( "Net" )
+    write( "Network" )
     
     sleep( 5 )
     
@@ -298,7 +298,7 @@ local function UISSS( )
     term.setTextColor( colors.lime )
     write( "Green" )
     term.setTextColor( colors.white )
-    write( "Net" )
+    write( "Network" )
 end
 
 --//End GUI function(s)//--
