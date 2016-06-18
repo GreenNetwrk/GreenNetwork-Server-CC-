@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.8.2 GN3 ALPHA"
+local SoftwareVersion = "16.8.3 GN3 ALPHA"
 
 --//Prep//--
 
@@ -214,7 +214,7 @@ local function domainNameUI( )
 end
 
 local function serverInfoUI( )
-    UIpage = "serverInfo"
+    UIPage = "serverInfo"
     
     term.setTextColor( colors.white )
     
