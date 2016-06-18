@@ -1,13 +1,7 @@
---Made by DigitalBlast Team
+--Made by WalkWay Team
 --[[ 
-    	.By using this software, you agree that websites that have harmful, offensive content WILL BE REMOVED
-        
-	and that domain name will be placeholded. (makeing it un-useable)
-	
-	.Also by useing this software you agree that your website will contain NO inapropreate content
-	
 	Host ComputerCraft webpages
-    Copyright (C) 2014-2016  DigitalBlast (Used to be Sapphire)
+    Copyright (C) 2014-2016  WalkWay
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,8 +15,6 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    
-    Github repository: https://github.com/DigitalBlast/GREENNET
 ]]--
 
 local SoftwareVersion = "16.7.1 GN2 ALPHA"
