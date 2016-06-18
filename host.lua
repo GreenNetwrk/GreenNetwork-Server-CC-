@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.8.3 GN3 ALPHA"
+local SoftwareVersion = "16.9.0 GN3 ALPHA"
 
 --//Prep//--
 
@@ -103,11 +103,11 @@ local softwareBreak
 
 local SSSMode = false
 
-local SSSDirectory
+local domainName = "nodomain.gn" --DEMO
 
-local domainName = "nodomain.gn"
+local serverOwner = "Johnny Appleseed" --DEMO
 
-local serverOwner = "Johnny Appleseed"
+local SSSFile = "sssdemo"
 
 --//End Define Vars//--
 
@@ -287,11 +287,14 @@ local function UISSS( )
     end
     
     term.setCursorPos( 1, 5 )
+    print( "SSS File: "..SSSFile )
+    
+    term.setCursorPos( 1, 7 )
     print( "[Home]" )
     
     term.setCursorPos( 1, 9 )
     term.setTextColor( colors.lightGray )
-    print( "Server Side Scripting (SSS) is a block of code that controls and effects how the website acts and looks. WARNING: If SSS is enabled, the server will not send the data until the SSS script launches the event, (greennet_sss_send) The greennet server will launch the event 'Greennet_sss' with the parameters of: {serialized table data}" )
+    print( "Server Side Scripting (SSS) is a background program that helps run the website" )
 	
 	term.setCursorPos( 1, size[ 2 ] )
     term.setTextColor( colors.lime )
@@ -350,7 +353,7 @@ local function UIHandle( )
                 SSS = true
             end
             UISSS( )
-        elseif data[ 4 ] == 5 and data[ 3 ] >= 1 and data[ 3 ] <= 6 then
+        elseif data[ 4 ] == 7 and data[ 3 ] >= 1 and data[ 3 ] <= 6 then
             homeUI( )
         end
     elseif UIPage == "serverInfo" then
