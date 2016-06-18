@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.7.5 GN2 ALPHA"
+local SoftwareVersion = "16.7.6 GN2 ALPHA"
 
 --//Prep//--
 
@@ -275,10 +275,10 @@ local function UISSS( )
     print( "SSS" )
     term.setCursorPos( 1, 3 )
     term.setBackgroundColor( colors.gray )
-    print( "SSS Mode:" )
+    print( "SSS Mode: " )
     term.setCursorPos( 10, 3 )
     if SSS == true then
-        term.setBackgroundColor( colors.green )
+        term.setBackgroundColor( colors.lime )
         write( "On" )
         term.setBackgroundColor( colors.gray )
     else
