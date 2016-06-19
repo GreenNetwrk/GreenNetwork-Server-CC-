@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.9.0 GN3 ALPHA"
+local SoftwareVersion = "16.9.1 GN3 ALPHA"
 
 --//Prep//--
 
@@ -109,6 +109,10 @@ local serverOwner = "Johnny Appleseed" --DEMO
 
 local SSSFile = "sssdemo"
 
+local SSSInit = false
+
+local sssFunc
+
 --//End Define Vars//--
 
 --//Setup//--
@@ -122,7 +126,24 @@ if not fs.exists( "www/index" ) then
     file.write( "term.setBackgroundColor(colors.gray) term.clear() term.setCursorPos(1,1) if term.isColor() then term.setTextColor(colors.lime) else term.setTextColor(colors.white) end print('This is the GreenNet server default webpage')" )
     file.close( )
 end
- 
+
+local function sssProc( file )
+    if fs.exists( file ) and not SSSInit then
+        local file = fs.open( file, "r" )
+        
+        local code = file.ReadAll()
+        
+        file.close()
+        
+        local func = loadstring( code )
+        
+        SSSInit = true
+        
+        return func
+     else
+        return false
+     end
+end 
  --//End setup//--
 
 --//GUI functions//--
