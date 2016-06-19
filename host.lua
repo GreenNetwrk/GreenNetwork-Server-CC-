@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.9.1 GN3 ALPHA"
+local SoftwareVersion = "16.9.2 GN3 ALPHA"
 
 --//Prep//--
 
@@ -127,11 +127,11 @@ if not fs.exists( "www/index" ) then
     file.close( )
 end
 
-local function sssProc( file )
+local function SSSProc( file )
     if fs.exists( file ) and not SSSInit then
         local file = fs.open( file, "r" )
         
-        local code = file.ReadAll()
+        local code = file.readAll()
         
         file.close()
         
