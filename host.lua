@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.9.3 GN3 ALPHA"
+local SoftwareVersion = "16.9.4 GN3 ALPHA"
 
 --//Prep//--
 
@@ -36,7 +36,7 @@ if not fs.exists( "gnsettingsfiles" ) then
     fs.makeDir( "gnsettingsfiles" )
 end
 
-local whitelistCheck = { http.checkURL( "http://greennet.uboxi.com" ) }
+local whitelistCheck = { http.checkURL( "http://pyrite.yohosts.info" ) }
 if not whitelistCheck[ 1 ] then
     error( "A fatal error has caused this: "..whitelistCheck[ 2 ] )
 end
@@ -199,6 +199,10 @@ local function homeUI( )
     
     term.setCursorPos( 1, 15 )
     print( "[Settings]" )
+
+    term.setTextColor(colors.lightGray)
+    term.setCursorPos( 1, 17 )
+    print( "GreenNetwork File Host" )
     term.setTextColor( colors.white )
     
     term.setCursorPos( 1, size[ 2 ] )
