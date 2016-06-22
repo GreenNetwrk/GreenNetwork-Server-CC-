@@ -197,9 +197,8 @@ local function homeUI( )
     term.setCursorPos( 1, 13 )
     print( "[Power off server]" )
     
-    term.setTextColor( colors.lightGray )
     term.setCursorPos( 1, 15 )
-    print( "GreenNetwork File Host Software" )
+    print( "[Settings]" )
     term.setTextColor( colors.white )
     
     term.setCursorPos( 1, size[ 2 ] )
@@ -207,6 +206,31 @@ local function homeUI( )
     write( "Green" )
     term.setTextColor( colors.white )
     write( "Network" )
+end
+
+local function settingsUI( )
+    UIpage = "settingsPage"
+    
+    term.setTextColor( colors.white )
+    
+    term.setBackgroundColor( colors.gray )
+    term.clear( )
+    paintutils.drawLine( 1, 1, size[ 1 ], 1, colors.lightGray )
+    
+    term.setCursorPos( 1, 1 )
+    print( "Server Settings" )
+    term.setBackgroundColor( colors.gray )
+    term.setCursorPos( 1, 3 )
+    print( "Nothing to see here... Yet" )
+
+	term.setCursorPos( 1, size[ 2 ] )
+    term.setTextColor( colors.lime )
+    write( "Green" )
+    term.setTextColor( colors.white )
+    write( "Network" )
+
+    sleep( 3 )
+    homeUI( )
 end
 
 local function domainNameUI( )
@@ -365,6 +389,8 @@ local function UIHandle( )
             serverInfoUI( )
         elseif data[ 4 ] == 13 and data[ 3 ] >= 1 and data[ 3 ] <= 18 then 
             os.shutdown( )
+        elseif data[ 4 ] == 15 and data[ 3 ] >= 1 and data[ 3 ] <= 10 then
+            settingsUI( )
         end
     elseif UIPage == "SSS" then
         if data[ 4 ] == 3 and data[ 3 ] >= 10 and data[ 3 ] <= 13 then
