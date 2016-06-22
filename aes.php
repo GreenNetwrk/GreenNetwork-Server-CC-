@@ -1,5 +1,5 @@
  <?php   
-    /**
+    /*
     Aes encryption
     */
     class AES {
