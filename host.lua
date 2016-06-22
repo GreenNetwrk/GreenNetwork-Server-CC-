@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local SoftwareVersion = "16.9.4 GN3 ALPHA"
+local SoftwareVersion = "16.9.5 GN3 ALPHA"
 
 --//Prep//--
 
@@ -83,10 +83,7 @@ if not fs.exists( "gnsettingsfiles/GREENNETSERVEROWNER" ) then
  end
  
  --]]
- 
- local ownerFile = fs.open( "gnsettingsfiles/GREENNETSERVEROWNER", "r" )
- local owner = ownerFile.readAll( )
- 
+
  --//End Prep//--
  
  --//Define local vars//--
@@ -105,7 +102,7 @@ local SSSMode = false
 
 local domainName = "nodomain.gn" --DEMO
 
-local serverOwner = "Johnny Appleseed" --DEMO
+local serverOwner
 
 local SSSFile = "sssdemo"
 
@@ -126,6 +123,10 @@ if not fs.exists( "www/index" ) then
     file.write( "term.setBackgroundColor(colors.gray) term.clear( ) term.setCursorPos(1,1) if term.isColor( ) then term.setTextColor(colors.lime) else term.setTextColor(colors.white) end print('This is the GreenNet server default webpage')" )
     file.close( )
 end
+
+local ownerFile = fs.open( "gnsettingsfiles/GREENNETSERVEROWNER", "r" )
+local serverOwner = ownerFile.readAll( )
+ownerFile.close()
 
 local function SSSProc( file )
     if fs.exists( file ) and not SSSInit then
