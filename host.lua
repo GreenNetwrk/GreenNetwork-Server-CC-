@@ -85,7 +85,7 @@ if not fs.exists( "gnsettingsfiles/GREENNETSERVEROWNER" ) then
  --]]
  
  local ownerFile = fs.open( "gnsettingsfiles/GREENNETSERVEROWNER", "r" )
- local owner = ownerFile.readAll()
+ local owner = ownerFile.readAll( )
  
  --//End Prep//--
  
@@ -123,7 +123,7 @@ end
  
 if not fs.exists( "www/index" ) then
     local file = fs.open( "www/index", "w" )
-    file.write( "term.setBackgroundColor(colors.gray) term.clear() term.setCursorPos(1,1) if term.isColor() then term.setTextColor(colors.lime) else term.setTextColor(colors.white) end print('This is the GreenNet server default webpage')" )
+    file.write( "term.setBackgroundColor(colors.gray) term.clear( ) term.setCursorPos(1,1) if term.isColor( ) then term.setTextColor(colors.lime) else term.setTextColor(colors.white) end print('This is the GreenNet server default webpage')" )
     file.close( )
 end
 
@@ -131,9 +131,9 @@ local function SSSProc( file )
     if fs.exists( file ) and not SSSInit then
         local file = fs.open( file, "r" )
         
-        local code = file.readAll()
+        local code = file.readAll( )
         
-        file.close()
+        file.close( )
         
         local func = loadstring( code )
         
@@ -364,7 +364,7 @@ local function UIHandle( )
     data = { os.pullEvent( "mouse_click" ) }
     if UIPage == "home" then
         if data[ 4 ] == 5 and data[ 3 ] >= 1 and data[ 3 ] <= 22 then
-            domainNameUI()
+            domainNameUI( )
         elseif data[ 4 ] == 7 and data[ 3 ] >= 1 and data[ 3 ] <= 22 then
             softwareBreak = true
             term.clear( )
@@ -377,14 +377,14 @@ local function UIHandle( )
     		term.setTextColor( colors.white )
     		write( "Network" )
         elseif data[ 4 ] == 9 and data[ 3 ] >= 1 and data[ 3 ] <= 28 then
-            UISSS()
+            UISSS( )
         elseif data[ 4 ] == 3 and data[ 3 ] >= 14 and data[ 3 ] <= 16 then
             if serverMode then
                 serverMode = false
             else
                 serverMode = true
             end
-            homeUI()
+            homeUI( )
         elseif data[ 4 ] == 11 and data[ 3 ] >= 1 and data[ 3 ] <= 13 then 
             serverInfoUI( )
         elseif data[ 4 ] == 13 and data[ 3 ] >= 1 and data[ 3 ] <= 18 then 
@@ -405,7 +405,7 @@ local function UIHandle( )
         end
     elseif UIPage == "serverInfo" then
         if data[ 4 ] == 11 and data[ 3 ] >= 1 and data[ 3 ] <= 6 then
-            homeUI()
+            homeUI( )
         end
     end
 end
