@@ -13,6 +13,8 @@ if($action == "register")
 
         mkdir("domains/".$domain);
 
+        mkdir("domains/".$domain."/subDomains");
+
         $file = fopen("domains/".$domain."/accountData.json", "w");
 
         $shaKey = hash("sha224", $_GET["password"]);
@@ -26,5 +28,46 @@ if($action == "register")
         fwrite($file, json_encode($toAppend));
 
         fclose($file);
+    }
+} else if($action == "registerSubdomain")
+{
+    $domain = $_GET["domain"];
+    $sub = $_GET["subDomain"];
+    if(file_exists("domains/".$domain) && !file_exists("domains/".$domain."/subDomains"."/".$sub))
+    {
+        date_default_timezone_set("ETC");
+
+        mkdir("domains/".$domain."/subDomains"."/".$sub);
+
+        $file = fopen("domains/".$domain."/subDomains"."/".$sub."/accountData.json", "w");
+
+        $rshaKey = hash("sha224", $_GET["rootpassword"]);
+
+        $file = fopen("domains/".$domain."/accountData.json", "r");
+
+        $arr = json_decode(fread($file, filesize("domains/".$domain."/accountData.json")));
+
+        fclose($file);
+
+        $rraw = new AES($arr["rootpassword"], $rshaKey, 256);
+
+        $mainpassword = aes->decrypt();
+
+        if($mainpassword == $_GET["rootpassword"])
+        {
+            $shaKey = hash("sha224", $_GET["password"]);
+
+            $raw = new AES($_GET["password"], $shaKey, 256);
+
+            $encryption = $raw->encrypt();
+
+            $toAppend = array("password" => $encryption, "data" => "Date-".date("Y-m-d"), "time-" => "unix-epoch-ETC-".time());
+
+            $file = fopen("domains/".$domain."/subDomains"."/".$sub."/accountData.json", "w");
+
+            fwrite($file, json_encode($toAppend));
+
+            fclose($file);
+        }
     }
 }
