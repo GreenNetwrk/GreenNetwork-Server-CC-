@@ -51,7 +51,7 @@ if($action == "register")
 
         $rraw = new AES($arr["rootpassword"], $rshaKey, 256);
 
-        $mainpassword = aes->decrypt();
+        $mainpassword = $rraw->decrypt();
 
         if($mainpassword == $_GET["rootpassword"])
         {
@@ -68,6 +68,12 @@ if($action == "register")
             fwrite($file, json_encode($toAppend));
 
             fclose($file);
+
+            echo "true";
+        } else {
+            echo "false";
         }
+    } else {
+        echo "non existing domain or existing subdomain";
     }
 }
