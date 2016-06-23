@@ -150,7 +150,7 @@ if($action == "register")
 
                 $json = json_decode($rawJSON);
 
-                if(encryptionToPassword($json->{'password'}, $password); == $password)
+                if(encryptionToPassword($json->{'password'}, $password) == $password)
                 {
                     $file = fopen("domains/".$domain."/sessionData.json", "w");
 
