@@ -123,13 +123,13 @@ if($action == "register")
 
                     $sessionID = rand(1000, 9999)."-".rand(1000, 9999);
 
+                    echo($sessionID);
+
                     $toAppend = array("currentSession" => $sessionID, "date" => date("Y-m-d"), "time" => time());
 
                     fwrite($file, json_encode($toAppend));
 
                     fclose($file);
-
-                    echo "true";
                 } else
                 {
                     echo "invalid password";
@@ -156,13 +156,13 @@ if($action == "register")
 
                     $sessionID = rand(1000, 9999)."-".rand(1000, 9999);
 
+                    echo($sessionID);
+
                     $toAppend = array("currentSession" => $sessionID, "date" => date("Y-m-d"), "time" => time());
 
                     fwrite($file, json_encode($toAppend));
 
                     fclose($file);
-
-                    echo "true";
                 } else
                 {
                     echo "invalid password";
