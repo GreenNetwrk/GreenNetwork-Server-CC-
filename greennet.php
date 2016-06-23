@@ -1,7 +1,7 @@
 <?php
 include 'aes.php';
 
-//error_reporting(0);
+error_reporting(0);
 
 $action = $_GET["action"];
 
